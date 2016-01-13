@@ -5,7 +5,9 @@ app.controller('MainCtrl', ['$scope', '$http', '$window', function ($scope, $htt
     singleSelect: false,
     defaultText: 'Test',
     selectedMode: 'labels',
-    width: 200
+    width: 200,
+    label: 'Type',
+    labelBreakLine: false
   };
 
   function load() {

@@ -5,6 +5,7 @@ angular.module('jucardi-multiselect-dropdown', []).directive('multiselectDropdow
             options: '=',
             onChanged: '=',
             settings: '=',
+            label: '='
         },
         templateUrl: '../src/multiselect-dropdown.html',
         controller: ['$scope', function($scope){
@@ -21,6 +22,9 @@ angular.module('jucardi-multiselect-dropdown', []).directive('multiselectDropdow
                 
                 if ($scope.settings.width > 0)
                     $scope.btnStyle['width'] = $scope.settings.width + 'px';
+                    
+                if ($scope.settings.labelBreakLine)
+                    $scope.btnStyle['clear'] = 'both';
             }
             
             // Public Methods

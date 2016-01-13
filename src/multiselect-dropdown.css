@@ -21,3 +21,9 @@
     overflow: hidden;
     text-align: left;
 }
+
+.multiselect-label {
+    float: left;
+    clear: both;
+    padding: 5px 12px 5px 0;
+}
