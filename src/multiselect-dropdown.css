@@ -1,0 +1,23 @@
+.multiselect-btn{
+    border: 1px solid #BBBBBB;
+    height: 30px;
+    line-height: 17px;
+}
+
+.multiselect-btn span {
+    float: left;
+}
+
+.multiselect-btn i {
+    float: right;
+    padding-left: 7px;
+}
+
+.btn-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: calc(100% - 20px);
+    overflow: hidden;
+    text-align: left;
+}

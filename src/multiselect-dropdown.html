@@ -1,0 +1,27 @@
+<div class='btn-group' ng-class='{open: open}'>
+    <button class='btn text-left multiselect-btn dropdown-toggle' ng-click='open=!open;openDropdown()' ng-style="btnStyle">
+        <span ng-class="{'btn-ellipsis': settings.width > 0}" ng-bind='getDisplayText()'></span>
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <ul class='dropdown-menu' aria-labelledby='dropdownMenu' style="cursor: pointer;">
+        <li ng-if="!settings.singleSelect">
+            <a ng-click='selectAll()'>
+                <i class='fa fa-check text-success'></i>
+                <span> Check All</span>
+            </a>
+        </li>
+        <li ng-if="!settings.singleSelect" class="">
+            <a ng-click='deselectAll();'>
+                <i class="fa fa-times text-danger"></i>
+                <span> Uncheck All</span>
+            </a>
+        </li>
+        <li class='divider' ng-if="!settings.singleSelect"></li>
+        <li ng-repeat='option in options'>
+            <a ng-click='setSelectedItem(option.value)'>
+                <i class="fa text-primary" ng-class="{ 'fa-check': !settings.singleSelect, 'fa-circle': settings.singleSelect, 'fa-inverse': !isSelected(option.value)}"></i>
+                <span ng-bind="option.label"></span>
+            </a>
+        </li>
+    </ul>
+</div>
