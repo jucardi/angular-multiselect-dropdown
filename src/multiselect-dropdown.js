@@ -12,11 +12,12 @@ angular.module('jucardi-multiselect-dropdown', []).directive('multiselectDropdow
             var map = {};
 
             function init() {
-                if ($scope.settings              == null) $scope.settings              = {};
-                if ($scope.settings.singleSelect == null) $scope.settings.singleSelect = false;
-                if ($scope.settings.defaultText  == null) $scope.settings.defaultText  = 'Select';
-                if ($scope.settings.selectedMode == null) $scope.settings.selectedMode = 'default';
-                if ($scope.settings.width        == null) $scope.settings.width        = 0;
+                if ($scope.settings                == null) $scope.settings                = {};
+                if ($scope.settings.singleSelect   == null) $scope.settings.singleSelect   = false;
+                if ($scope.settings.defaultText    == null) $scope.settings.defaultText    = 'Select';
+                if ($scope.settings.selectedMode   == null) $scope.settings.selectedMode   = 'default';
+                if ($scope.settings.width          == null) $scope.settings.width          = 0;
+                if ($scope.settings.labelBreakLine == null) $scope.settings.labelBreakLine = false;
                 
                 $scope.btnStyle = { }
                 

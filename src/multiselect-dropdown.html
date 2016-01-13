@@ -1,10 +1,10 @@
 <div class='multiselect btn-group' ng-class='{open: open}'>
-    <span ng-if="label != null && label != ''" ng-bind="label" class="multiselect-label"></span>
+    <span ng-if="settings.label != null && settings.label != ''" ng-bind="settings.label" class="multiselect-label"></span>
     <button class='btn text-left multiselect-btn dropdown-toggle' ng-click='open=!open;openDropdown()' ng-style="btnStyle">
         <span ng-class="{'btn-ellipsis': settings.width > 0}" ng-bind='getDisplayText()'></span>
         <i class="fa fa-caret-down"></i>
     </button>
-    <ul class='dropdown-menu' aria-labelledby='dropdownMenu' style="cursor: pointer;">
+    <ul class='dropdown-menu' aria-labelledby='dropdownMenu' style="cursor: pointer; position: absolute">
         <li ng-if="!settings.singleSelect">
             <a ng-click='selectAll()'>
                 <i class='fa fa-check text-success'></i>

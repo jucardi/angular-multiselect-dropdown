@@ -2,17 +2,17 @@ var app = angular.module('app', ['ngAnimate', 'ngTouch', 'jucardi-multiselect-dr
 
 app.controller('MainCtrl', ['$scope', '$http', '$window', function ($scope, $http, $window) {
   $scope.settings = {
-    singleSelect: false,
+    singleSelect: true,
     defaultText: 'Test',
     selectedMode: 'labels',
     width: 200,
     label: 'Type',
-    labelBreakLine: false
+    labelBreakLine: true
   };
 
   function load() {
     $scope.filter1 = {
-      selected: [],
+      selected: [ "Pending" ],
       data: [
     		{ value: "Pending",  label: "Pending" },
     		{ value: "Active",   label: "Active" },
