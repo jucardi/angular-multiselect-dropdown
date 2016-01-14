@@ -8,7 +8,7 @@ angular.module('jucardi-multiselect-dropdown', []).directive('multiselectDropdow
             label: '='
         },
         templateUrl: '../src/multiselect-dropdown.html',
-        controller: ['$scope', function($scope){
+        controller: ['$scope', '$element', function($scope, $element){
             var map = {};
 
             function init() {
@@ -67,6 +67,19 @@ angular.module('jucardi-multiselect-dropdown', []).directive('multiselectDropdow
                 return $scope.settings.defaultText;
             }
             
+            function openDropdown() {
+                // Just to make sure.. had a bug where key events were recorded twice
+                angular.element(document).off('click', externalClickListener);
+                angular.element(document).on('click',  externalClickListener);
+            }
+            
+            function externalClickListener(event) {
+                $scope.$apply(function () {
+                    if ($element.find(event.toElement).length == 0 && $scope.open)
+                    $scope.open = false;
+                });
+            }
+
             // Private Methods
             
             function clear() {
@@ -111,6 +124,7 @@ angular.module('jucardi-multiselect-dropdown', []).directive('multiselectDropdow
                 }
             }
             
+            $scope.showMenu = false;
             $scope.$watch('options', generateMap);
 
             angular.extend($scope, {
@@ -118,7 +132,8 @@ angular.module('jucardi-multiselect-dropdown', []).directive('multiselectDropdow
                 deselectAll:     deselectAll,
                 setSelectedItem: setSelectedItem,
                 isSelected:      isSelected,
-                getDisplayText:  getDisplayText
+                getDisplayText:  getDisplayText,
+                openDropdown:    openDropdown,
             });
             
             init();

@@ -2,7 +2,7 @@ var app = angular.module('app', ['ngAnimate', 'ngTouch', 'jucardi-multiselect-dr
 
 app.controller('MainCtrl', ['$scope', '$http', '$window', function ($scope, $http, $window) {
   $scope.settings = {
-    singleSelect: true,
+    singleSelect: false,
     defaultText: 'Test',
     selectedMode: 'labels',
     width: 200,
